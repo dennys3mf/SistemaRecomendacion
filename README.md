@@ -9,3 +9,6 @@ En cloud: > Copiamos la URL de la api generada por playwithdocker y la pegamos e
 ![image](https://github.com/dennys3mf/SistemaRecomendacion/assets/70309655/99d0ee48-e597-429c-9c98-507bb2617280)
 ![image](https://github.com/dennys3mf/SistemaRecomendacion/assets/70309655/1a74dfd2-0647-4375-875d-99453f3bee18)
 ![image](https://github.com/dennys3mf/SistemaRecomendacion/assets/70309655/f9543ff7-1f8a-4f58-952f-506bed6fc831)
+
+En  local, ejecutamos el siguiente comando:
+## docker-compose up --build
