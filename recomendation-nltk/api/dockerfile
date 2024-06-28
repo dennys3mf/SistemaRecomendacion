@@ -1,0 +1,24 @@
+# Usa una imagen base de Python
+FROM python:3.11-slim-bullseye AS base
+
+# Establece el directorio de trabajo
+WORKDIR /usr/local/app
+
+# Instala dependencias necesarias
+RUN apt-get update && apt-get install -y openjdk-11-jdk wget && apt-get clean
+
+# Establece JAVA_HOME
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV PATH=$JAVA_HOME/bin:$PATH
+
+# Instala Dask y Spark
+RUN pip install "dask[dataframe]" --upgrade
+RUN pip install pyspark
+
+# Copia los archivos de la aplicación
+COPY requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+
+# Comando para ejecutar la aplicación
+CMD ["python", "app.py", "0.0.0.0:80"]

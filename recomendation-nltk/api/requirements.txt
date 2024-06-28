@@ -1,0 +1,10 @@
+dask
+dask[dataframe]
+scikit-learn
+pandas
+numpy
+nltk
+Flask
+flask-cors
+redis
+pyspark

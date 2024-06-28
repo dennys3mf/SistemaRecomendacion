@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+  api:
+    build: .
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/usr/local/app
+    environment:
+      - SPARK_DRIVER_MEMORY=8G
+      - SPARK_EXECUTOR_MEMORY=8G
+      - SPARK_SQL_SHUFFLE_PARTITIONS=200
+      - SPARK_DEFAULT_PARALLELISM=200
+      
+      
+      
+      

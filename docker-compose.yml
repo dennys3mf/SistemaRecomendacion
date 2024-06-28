@@ -1,0 +1,31 @@
+version: "3.4"
+services:
+  api:
+    build:
+      context: ./recomendation-nltk/api  # Ruta al directorio donde está el Dockerfile del backend
+    ports:
+      - "8000:80"
+    volumes:
+      - ./recomendation-nltk/api:/usr/local/app
+    environment:
+      - SPARK_DRIVER_MEMORY=8G
+      - SPARK_EXECUTOR_MEMORY=8G
+      - SPARK_SQL_SHUFFLE_PARTITIONS=200
+      - SPARK_DEFAULT_PARALLELISM=200
+      - FLASK_ENV=development
+      - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+  app:
+    build:
+      context: ./RecomendationApp  # Ruta al directorio donde está el Dockerfile del frontend
+    working_dir: /app
+    volumes:
+      - ./RecomendationApp:/app
+    command: sh -c "npm install && npm start"
+    ports:
+      - "19000:19000"
+      - "19001:19001"
+    environment:
+      - EXPO_DEVTOOLS_LISTEN_ADDRESS=0.0.0.0
+      - EXPO_NO_CACHE=1
+      - EXPO_DEBUG=true
