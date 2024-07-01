@@ -4,7 +4,7 @@ services:
     build:
       context: ./recomendation-nltk/api  # Ruta al directorio donde está el Dockerfile del backend
     ports:
-      - "8000:80"
+      - "8080:80"
     volumes:
       - ./recomendation-nltk/api:/usr/local/app
     environment:
