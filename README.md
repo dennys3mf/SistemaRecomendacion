@@ -1,7 +1,18 @@
 # FRONT END
-docker pull bhukzers050702/tiktok-frontend:tagname
+	Paso 1
+	docker pull bhukzers050702/tiktok-frontend:tagname
+	Paso 2
+	docker images
+	Paso 3
+	docker run it -p 8080:80 --name api 4b139et3241
+
 # BACK END
-docker pull bhukzers050702/api-tiktok:tagname
+	Paso 1
+	docker pull bhukzers050702/api-tiktok:tagname
+	Paso 2
+	docker images
+	Paso 3
+	docker run it -p 8080:80 --name front 2b1394efc41b
 
 En cloud: > Copiamos la URL de la api generada por playwithdocker y la pegamos en nuestro front-end
 ![image](https://github.com/dennys3mf/SistemaRecomendacion/assets/70309655/8af3190b-048a-42ec-bf5a-97b9af1b981b)
