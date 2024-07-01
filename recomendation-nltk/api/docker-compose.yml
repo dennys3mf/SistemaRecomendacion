@@ -5,7 +5,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - .:/usr/local/app
+      - .:/app
     environment:
       - SPARK_DRIVER_MEMORY=8G
       - SPARK_EXECUTOR_MEMORY=8G
